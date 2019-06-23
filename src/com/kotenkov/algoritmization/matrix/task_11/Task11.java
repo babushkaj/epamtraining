@@ -1,0 +1,54 @@
+package com.kotenkov.algoritmization.matrix.task_11;
+
+public class Task11 {
+
+    private int [] [] matrix;
+    private int m;
+    private int n;
+
+    public Task11(int m, int n) {
+        this.m = m;
+        this.n = n;
+    }
+
+    public void createRandomMatrix(){
+        matrix = new int [m][n];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix [i][j] = (int)(Math.random()*16);
+            }
+        }
+    }
+
+    public void printMatrix(){
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public void doTask11(){
+        int [] matchMatrix = new int [m];
+        for (int i = 0; i < matrix.length; i++) {
+            int matchCount = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 5){
+                    matchCount++;
+                }
+            }
+            if (matchCount >= 3){
+                matchMatrix[i] = 1;
+            }
+        }
+
+        System.out.println("\nНомера строк, в которых число 5 встречается три и более раз: ");
+        for (int i = 0; i < matchMatrix.length; i++) {
+            if(matchMatrix[i] == 1){
+                System.out.print((i + 1) + "\t");
+            }
+        }
+    }
+
+}
