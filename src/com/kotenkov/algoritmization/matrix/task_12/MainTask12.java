@@ -6,13 +6,17 @@ public class MainTask12 {
 
     public static void main(String[] args) {
 
-        Task12 t12 = new Task12(10);
+        Task12 t12 = new Task12(7);
         t12.createRandomMatrix();
         System.out.println("\nИсходная матрица: \n");
         t12.printMatrix();
-        t12.doTask12();
-        System.out.println("\nМатрица после сортировки: \n");
+        t12.doAscendingSorting();
+        System.out.println("\nМатрица после сортировки элементов строк по возрастанию: \n");
         t12.printMatrix();
+        t12.doDescendingSorting();
+        System.out.println("\nМатрица после сортировки элементов строк по убыванию: \n");
+        t12.printMatrix();
+
 
     }
 

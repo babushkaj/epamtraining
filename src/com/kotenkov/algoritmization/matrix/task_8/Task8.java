@@ -1,8 +1,10 @@
 package com.kotenkov.algoritmization.matrix.task_8;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+//  В числовой матрице поменять местами два столбца, т. е. все элементы одного столбца поставить на
+//  соответствующие им позиции другого, а элементы второго переместить в первый. Номера столбцов вводит
+//  пользователь с клавиатуры.
+
+import java.util.Scanner;
 
 public class Task8 {
 
@@ -46,46 +48,34 @@ public class Task8 {
         }
     }
 
-    public void enterColumnsNumbers() throws IOException {
-        BufferedReader reader = null;
+    public void enterColumnsNumbers() {
+        Scanner scanner = new Scanner(System.in);
 
-        try {
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            while (true) {
+        while (theFirstColumn <= 0 || theFirstColumn > n) {
+            System.out.println("\nВведите номер первого столбца для перестановки (целое число от 1 до " + n + "):");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
                 System.out.println("\nВведите номер первого столбца для перестановки (целое число от 1 до " + n + "):");
-                String line = reader.readLine();
-                try {
-                    theFirstColumn = Integer.parseInt(line);
-                    if (theFirstColumn > 0 && theFirstColumn <= n) {
-                        System.out.println("\nПервый столбец для перестановки имеет номер " + theFirstColumn);
-                        break;
-                    } else {
-                        System.out.println("\nПроверьте вводимое число и повторите ввод!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("\nВы ввели не целое число! Повторите ввод!");
-                    continue;
-                }
             }
-            while (true) {
+
+            theFirstColumn = scanner.nextInt();
+
+            if (theFirstColumn > 0 && theFirstColumn < n) {
+                break;
+            }
+        }
+
+        while (theSecondColumn <= 0 || theSecondColumn > n) {
+            System.out.println("\nВведите номер второго столбца для перестановки (целое число от 1 до " + n + "):");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
                 System.out.println("\nВведите номер второго столбца для перестановки (целое число от 1 до " + n + "):");
-                String line = reader.readLine();
-                try {
-                    theSecondColumn = Integer.parseInt(line);
-                    if (theSecondColumn > 0 && theSecondColumn <= n) {
-                        System.out.println("\nВторой столбец для перестановки имеет номер " + theSecondColumn);
-                        break;
-                    } else {
-                        System.out.println("\nПроверьте вводимое число и повторите ввод!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("\nВы ввели не целое число! Повторите ввод!");
-                    continue;
-                }
             }
-        } finally {
-            if (reader != null){
-                reader.close();
+
+            theSecondColumn = scanner.nextInt();
+
+            if (theSecondColumn > 0 && theSecondColumn < n) {
+                break;
             }
         }
     }

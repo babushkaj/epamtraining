@@ -1,5 +1,7 @@
 package com.kotenkov.algoritmization.matrix.task_3;
 
+//  Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+
 public class Task3 {
 
     private int [] [] matrix;

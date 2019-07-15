@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.matrix.task_9;
 
+//  Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
+//  столбец содержит максимальную сумму.
+
 public class Task9 {
 
     private int [] [] matrix;

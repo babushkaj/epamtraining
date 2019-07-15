@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.one_dimensional_array.task_6;
 
+//  Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых
+//  являются простыми числами (нумерацию чисел начинаю с 1)
+
 public class Task6 {
 
     private int n;
@@ -8,17 +11,33 @@ public class Task6 {
     private double sum;
 
     public Task6(int n) {
-        this.n = n;
+        if(n <= 0){
+            this.n = 5;
+        } else {
+            this.n = n;
+        }
     }
 
-    public void createRandomArray(){
+    private void createRandomArray(){
         array = new double [n];
         for (int i = 0; i < array.length; i++) {
             array [i] = Math.random()*10;
         }
     }
 
-    public void doTask6(){
+    private void printArray(){
+        System.out.print("[ ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array [i] + "\t");
+        }
+        System.out.print(" ]\n");
+    }
+
+    private void showResult(){
+        System.out.println("Сумма чисел, порядковые номера которых являются простыми числами: " + sum);
+    }
+
+    private void doTask6(){
         for (int i = 1; i < array.length; i++) {
             for (int j = 2; j < i+1; j++) {
                 if((i + 1) % j == 0){
@@ -32,16 +51,15 @@ public class Task6 {
         }
     }
 
-    public void printArray(){
-        System.out.print("[ ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array [i] + "\t");
-        }
-        System.out.print(" ]\n");
-    }
+    public static void main(String[] args) {
 
-    public void showResult(){
-        System.out.println("Сумма чисел, порядковые номера которых являются простыми числами: " + sum);
+        Task6 t6 = new Task6(5);
+        t6.createRandomArray();
+        System.out.println("Массив: ");
+        t6.printArray();
+        t6.doTask6();
+        t6.showResult();
+
     }
 
 }

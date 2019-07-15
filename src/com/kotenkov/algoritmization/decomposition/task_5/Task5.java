@@ -1,16 +1,21 @@
 package com.kotenkov.algoritmization.decomposition.task_5;
 
+//  Составить программу, которая в массиве A[N] находит второе по величине число (вывести на печать число,
+//  которое меньше максимального элемента массива, но больше всех других элементов).
+
 public class Task5 {
 
-    public static int[] createRandomArray(int n){
+    private static int[] createRandomArray(int n){
         int [] array = new int [n];
+
         for (int i = 0; i < array.length; i++) {
             array [i] = (int)(Math.random()*10);
         }
+
         return array;
     }
 
-    public static void printArray(int [] array){
+    private static void printArray(int [] array){
         for (int i = 0; i < array.length; i++) {
                 System.out.print(array[i] + "\t");
         }
@@ -27,7 +32,7 @@ public class Task5 {
         return max;
     }
 
-    public static int findTheSecondNumber(int [] array){
+    private static int findTheSecondNumber(int [] array){
         int theSecondNumber = array[0];
         for (int i = 1; i < array.length; i++) {
             if(array[i] > theSecondNumber && array[i] < findMaxNumber(array)){
@@ -35,6 +40,15 @@ public class Task5 {
             }
         }
         return theSecondNumber;
+    }
+
+    public static void main(String[] args) {
+
+        int [] matrix = Task5.createRandomArray(7);
+        Task5.printArray(matrix);
+        System.out.println("Второе по величине число в массиве: " +
+                Task5.findTheSecondNumber(matrix));
+
     }
 
 }

@@ -1,6 +1,6 @@
 package com.kotenkov.algoritmization.matrix.task_1;
 
-import javax.sound.midi.Soundbank;
+//  Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего.
 
 public class Task1 {
 
@@ -32,7 +32,7 @@ public class Task1 {
     }
 
     public void doTask1(){
-        System.out.println("Нечётные столбцы, у которых первый элемент больше последнего: ");
+        System.out.println("Нечётные столбцы (нумерация с 1), у которых первый элемент больше последнего: ");
         for (int i = 0; i < matrix[0].length; i = i + 2) {
             if(matrix[0][i] > matrix[matrix.length - 1][i]){
                 System.out.println("Столбец № " + (i+1));

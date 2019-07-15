@@ -12,7 +12,7 @@ public class MainTask6 {
 
     public static void main(String[] args) {
 
-        Task6 t6 = new Task6(10);
+        Task6 t6 = new Task6(8);
         t6.doTask6();
         t6.printMatrix();
 

@@ -1,97 +1,117 @@
 package com.kotenkov.basics_of_software_code_development.cycle;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+//  Вычислить значения функции на отрезке [а,b] c шагом h:
+//  y = x при x > 2
+//  y = -x при x <= 2
+
+import java.util.Scanner;
 
 public class Task2 {
-    public static void main(String[] args) throws IOException {
+
+    private static int getA(Scanner scanner){
         int a = 0;
-        int b = 0;
-        int h = 0;
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
-        while (true) {
-            System.out.println("Введите целое число: ");
-            String line = input.readLine();
-            try{
-                a = Integer.parseInt(line);
+            System.out.println("\nВведите целое число:");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("\nВведите целое число:");
+            }
+
+            a = scanner.nextInt();
+
+        return a;
+    }
+
+    private static int getB(Scanner scanner, int a){
+        int b = a;
+
+        while (b == a) {
+            System.out.println("\nВведите целое число, не равное a = " + a + ":");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("\nВведите целое число, не равное a = " + a + ":");
+            }
+
+            b = scanner.nextInt();
+
+            if (b != a) {
                 break;
-            } catch (NumberFormatException e){
-                System.out.println("Вы ввели не целое число! Повторите ввод!");
-                continue;
             }
         }
 
-        while (true) {
-            System.out.println("Введите целое число, не равное a = " + a +": ");
-            String line = input.readLine();
-            try {
-                b = Integer.parseInt(line);
-                if (b != a) {
+        return b;
+    }
+
+    private static int getH(Scanner scanner, int a, int b){
+        int h = 0;
+
+        if (a < b){
+            while (h <= 0) {
+                System.out.println("\nВведите целое положительное число:");
+                while (!scanner.hasNextInt()) {
+                    scanner.next();
+                    System.out.println("\nВведите целое положительное число:");
+                }
+
+                h = scanner.nextInt();
+
+                if (h > 0) {
                     break;
-                } else {
-                    System.out.println("Вы ввели число, равное a = " + a + " Повторите ввод!");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Вы ввели не целое число! Повторите ввод!");
-                continue;
             }
-        }
-
-        while(true){
-            if (a > b){
-                System.out.println("Введите целое отрицательное число: ");
-                String line = input.readLine();
-                try {
-                    h = Integer.parseInt(line);
-                    if (b < a) {
-                        break;
-                    } else {
-                        System.out.println("Вы ввели положительное число!" + a + " Повторите ввод!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Вы ввели не целое число! Повторите ввод!");
-                    continue;
+        } else {
+            System.out.println("Введите целое отрицательное число: ");
+            while (h >= 0) {
+                System.out.println("\nВведите целое отрицательное число:");
+                while (!scanner.hasNextInt()) {
+                    scanner.next();
+                    System.out.println("\nВведите целое отрицательное число:");
                 }
-            } else if (a < b){
-                System.out.println("Введите целое положительное число: ");
-                String line = input.readLine();
-                try {
-                    h = Integer.parseInt(line);
-                    if (b > a) {
-                        break;
-                    } else {
-                        System.out.println("Вы ввели отрицательное число!" + a + " Повторите ввод!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Вы ввели не целое число! Повторите ввод!");
-                    continue;
+
+                h = scanner.nextInt();
+
+                if (h < 0) {
+                    break;
                 }
             }
         }
 
-        input.close();
+        return h;
+    }
+
+    private static void doTask2(){
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        int a = getA(scanner);
+        int b = getB(scanner,a);
+        int h = getH(scanner,a,b);
+
         System.out.println("Вычисляем значение функции для a = " + a + ", b = " + b + ", h = " + h + ":");
-        System.out.println("x y");
+        System.out.println("x\t y");
 
         if (a < b){
             for (int x = a; x <= b; x += h) {
                 if (x > 2){
-                    System.out.printf("%d %d\n", x, x);
+                    System.out.printf("%d\t %d\n", x, x);
                 } else {
-                    System.out.printf("%d %d\n", x, -x);
+                    System.out.printf("%d\t %d\n", x, -x);
                 }
             }
         } else{
             for (int x = a; x >= b; x -= h) {
                 if (x > 2){
-                    System.out.printf("%d %d\n", x, x);
+                    System.out.printf("%d\t %d\n", x, x);
                 } else {
-                    System.out.printf("%d %d\n", x, -x);
+                    System.out.printf("%d\t %d\n", x, -x);
                 }
             }
         }
+    }
+
+    public static void main(String[] args){
+
+        doTask2();
 
     }
 }

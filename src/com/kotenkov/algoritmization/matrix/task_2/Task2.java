@@ -1,5 +1,7 @@
 package com.kotenkov.algoritmization.matrix.task_2;
 
+//  Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали.
+
 public class Task2 {
 
     private int [] [] matrix;

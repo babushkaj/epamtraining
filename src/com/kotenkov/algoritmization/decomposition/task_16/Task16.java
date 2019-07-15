@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.decomposition.task_16;
 
+//  Написать программу, определяющую сумму n - значных чисел, содержащих только нечетные цифры.
+//  Определить также, сколько четных цифр в найденной сумме. Для решения задачи использовать декомпозицию.
+
 public class Task16 {
 
     private static boolean isContainOnlyOddDigits(int number){
@@ -17,12 +20,10 @@ public class Task16 {
 
     private static long findSum(int amountOfDigitsInNumber) {
         if (amountOfDigitsInNumber > 9) {
-
             System.out.println("Максимальное число, с которым работает данный алгоритм, равно " +
                     Integer.MAX_VALUE + ". Пожалуйста, понизьте порядок обрабатываемых чисел и " +
                     "перезапустите программу.");
             return 0;
-
         } else {
 
             int theFirstNumber = (int) Math.pow(10, amountOfDigitsInNumber - 1);
@@ -36,9 +37,7 @@ public class Task16 {
             }
 
             return sum;
-
         }
-
     }
 
     private static int countEvenDigitsAmount(long number){
@@ -52,7 +51,7 @@ public class Task16 {
         return evenDigitsAmount;
     }
 
-    public static void doTask16(int amountOfDigitsInNumber){
+    private static void doTask16(int amountOfDigitsInNumber){
 
         long sum = findSum(amountOfDigitsInNumber);
         if(sum != 0){
@@ -64,4 +63,9 @@ public class Task16 {
 
     }
 
+    public static void main(String[] args) {
+
+        Task16.doTask16(3);
+
+    }
 }

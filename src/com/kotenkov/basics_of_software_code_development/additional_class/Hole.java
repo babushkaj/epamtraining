@@ -5,8 +5,17 @@ public class Hole {
     private int b;
 
     public Hole (int a, int b){
-        this.a = b;
-        this.b = b;
+        if(a < 0){
+            this.a = 1;
+        } else {
+            this.a = a;
+        }
+
+        if(b < 0){
+            this.b = 1;
+        } else {
+            this.b = b;
+        }
     }
 
     public int getA() {

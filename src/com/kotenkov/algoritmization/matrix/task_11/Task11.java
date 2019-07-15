@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.matrix.task_11;
 
+//  Матрицу 10x20 заполнить случайными числами от 0 до 15. Вывести на экран саму матрицу и номера строк, в
+//  которых число 5 встречается три и более раз.
+
 public class Task11 {
 
     private int [] [] matrix;
@@ -43,7 +46,7 @@ public class Task11 {
             }
         }
 
-        System.out.println("\nНомера строк, в которых число 5 встречается три и более раз: ");
+        System.out.println("\nНомера строк (отсчёт ведётся с 1), в которых число 5 встречается три и более раз: ");
         for (int i = 0; i < matchMatrix.length; i++) {
             if(matchMatrix[i] == 1){
                 System.out.print((i + 1) + "\t");

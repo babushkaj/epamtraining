@@ -1,12 +1,18 @@
 package com.kotenkov.algoritmization.matrix.task_15;
 
+//  Найти наибольший элемент матрицы и заменить все нечётные элементы на него.
+
 public class Task15 {
 
     private int [] [] matrix;
     private int n;
 
     public Task15(int n) {
-        this.n = n;
+        if(n <= 0){
+            this.n = 5;
+        } else {
+            this.n = n;
+        }
     }
 
     public void createRandomMatrix(){

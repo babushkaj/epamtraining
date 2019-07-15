@@ -1,5 +1,7 @@
 package com.kotenkov.algoritmization.decomposition.task_11;
 
+//  Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр.
+
 public class Task11 {
 
     private static int calculateNumbersLength(int number){
@@ -11,7 +13,7 @@ public class Task11 {
         return length;
     }
 
-    public static void doTask11(int a, int b){
+    private static void doTask11(int a, int b){
         if(calculateNumbersLength(a) > calculateNumbersLength(b)){
             System.out.println("\nВ числе " + a + " больше цифр, чем в числе " + b + ".");
         } else if (calculateNumbersLength(b) > calculateNumbersLength(a)){
@@ -19,6 +21,14 @@ public class Task11 {
         } else {
             System.out.println("\nВ числах " + a + " и " + b + " одинаковое количество цифр.");
         }
+    }
+
+    public static void main(String[] args) {
+
+        Task11.doTask11(1234, 12345);
+        Task11.doTask11(12340, 1234);
+        Task11.doTask11(12340, 12345);
+
     }
 
 }

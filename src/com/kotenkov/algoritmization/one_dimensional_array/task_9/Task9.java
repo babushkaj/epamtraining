@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.one_dimensional_array.task_9;
 
+//     В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число.
+//     Если таких чисел несколько, то определить наименьшее из них.
+
 public class Task9 {
 
     private int n;
@@ -8,17 +11,21 @@ public class Task9 {
     private int result;
 
     public Task9(int n) {
-        this.n = n;
+        if(n <= 0){
+            this.n = 5;
+        } else {
+            this.n = n;
+        }
     }
 
-    public void createRandomArray(){
+    private void createRandomArray(){
         array = new int [n];
         for (int i = 0; i < array.length; i++) {
             array [i] = (int)(Math.random()*10 + 1);
         }
     }
 
-    public void doTask9(){
+    private void doTask9(){
         int [] copyOfArray = new int [n];
         markersArray = new int [n];
         copyOfArray[0] = array[0];
@@ -73,14 +80,14 @@ public class Task9 {
         }
     }
 
-    public void printArray(){
+    private void printArray(){
         for (int i = 0; i < array.length; i++) {
             System.out.print(array [i] + "\t");
         }
         System.out.println();
     }
 
-    public void printMarkersArray(){
+    private void printMarkersArray(){
         System.out.println("Количество повторений для каждого числа(\"0\" - число было ранее): ");
         for (int i = 0; i < markersArray.length; i++) {
             System.out.print(markersArray [i] + "\t");
@@ -88,8 +95,20 @@ public class Task9 {
         System.out.println();
     }
 
-    public void showResult(){
+    private void showResult(){
         System.out.println("Наименьшее из наиболее часто встречающихся чисел: " + result);
     }
 
+
+    public static void main(String[] args) {
+
+        Task9 t9 = new Task9(10);
+        t9.createRandomArray();
+        System.out.println("Исходная последовательность: ");
+        t9.printArray();
+        t9.doTask9();
+        t9.printMarkersArray();
+        t9.showResult();
+
+    }
 }

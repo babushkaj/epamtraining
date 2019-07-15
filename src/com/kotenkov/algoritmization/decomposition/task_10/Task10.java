@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.decomposition.task_10;
 
+//  Дано натуральное число N. Написать метод(методы) для формирования массива, элементами которого
+//  являются цифры числа N.
+
 public class Task10 {
 
     private static int calculateLength(int number){
@@ -9,6 +12,13 @@ public class Task10 {
             length++;
         } while (number != 0);
         return length;
+    }
+
+    private static void printArray(int [] array){
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + "\t");
+        }
+        System.out.println();
     }
 
     private static int [] makeArray(int number){
@@ -21,12 +31,20 @@ public class Task10 {
         return array;
     }
 
-    public static void doTask10(int number){
-        int [] array = makeArray(number);
-        System.out.println("Массив из цифр числа " + number + ":\n");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + "\t");
+    private static void doTask10(int number){
+        if(number > 0) {
+            int[] array = makeArray(number);
+            System.out.println("Массив из цифр числа " + number + ":\n");
+            printArray(array);
+        } else {
+            System.out.println("По условию n - натуральное число. Проверьте введённые данные и перезапустите программу.");
         }
+    }
+
+    public static void main(String[] args) {
+
+        Task10.doTask10(108008);
+
     }
 
 }

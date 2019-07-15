@@ -1,5 +1,7 @@
 package com.kotenkov.algoritmization.matrix.task_10;
 
+//  Найти положительные элементы главной диагонали квадратной матрицы.
+
 public class Task10 {
 
     private int [] [] matrix;

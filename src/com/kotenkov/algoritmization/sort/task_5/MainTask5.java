@@ -11,7 +11,13 @@ public class MainTask5 {
 
     public static void main(String[] args) {
 
+//        int [] array = {2,3,5,2,7,2,3,9,1};
+//        int [] array = {9,8,7,6,5,4,3,2,1};
+//        int [] array = {5,3,1,7};
+//        int [] array = {1,0,1,0};
+        int [] array = {0,1,0,0,1,0,1};
 
+        Task5.doTask5(array);
 
     }
 

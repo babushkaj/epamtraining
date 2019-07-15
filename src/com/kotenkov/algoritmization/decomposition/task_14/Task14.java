@@ -1,8 +1,12 @@
 package com.kotenkov.algoritmization.decomposition.task_14;
 
+//  Натуральное число, в записи которого n цифр, называется числом Армстронга, если сумма его цифр,
+//  возведенная в степень n, равна самому числу. Найти все числа Армстронга от 1 до k. Для решения задачи
+//  использовать декомпозицию.
+
 public class Task14 {
 
-    private static int calculateNumbersLength(int number){
+    private static int calculateLengthOfNumber(int number){
         int length = 0;
         do{
             number = number/10;
@@ -12,7 +16,7 @@ public class Task14 {
     }
 
     private static int findNumbersSum(int number){
-        int length = calculateNumbersLength(number);
+        int length = calculateLengthOfNumber(number);
         int numbersSum = 0;
         do{
             numbersSum += Math.pow((number%10), length);
@@ -29,13 +33,24 @@ public class Task14 {
         }
     }
 
-    public static void doTask14(int k){
-        System.out.println("Числа Армстронга в диапазоне от 1 до " + k + ": ");
-        for (int i = 1; i <= k; i++) {
-            if(isArmstrongsNumber(i)){
-                System.out.print(i + "\t");
+    private static void doTask14(int k){
+        if(k > 1){
+            System.out.println("Числа Армстронга в диапазоне от 1 до " + k + ": ");
+            for (int i = 1; i <= k; i++) {
+                if(isArmstrongsNumber(i)){
+                    System.out.print(i + "\t");
+                }
             }
+        }else{
+            System.out.println("По условию k - натуральное число больше единицы." +
+                    " Проверьте введённые данные и перезапустите программу.");
         }
+
     }
 
+    public static void main(String[] args) {
+
+        Task14.doTask14(1000000);
+
+    }
 }

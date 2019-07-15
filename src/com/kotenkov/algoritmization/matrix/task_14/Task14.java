@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.matrix.task_14;
 
+//  Сформировать случайную матрицу m x n, состоящую из нулей и единиц,
+//  причем в каждом столбце число единиц равно номеру столбца.
+
 public class Task14 {
 
     private int [] [] matrix;
@@ -11,7 +14,7 @@ public class Task14 {
         this.n = n;
     }
 
-    public void createRandomMatrix(){
+    private void createRandomMatrix(){
         matrix = new int [m][n];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -59,7 +62,7 @@ public class Task14 {
         } else {
             System.out.println("Для данной задачи количество строк матрицы должно\n" +
                     "быть больше или равно количеству столбцов.\nПожалуйста, создайте " +
-                    " объект Task14 в соответствии с даным требованием.");
+                    " объект Task14 в соответствии с данным требованием.");
         }
 
     }

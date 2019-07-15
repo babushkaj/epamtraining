@@ -1,57 +1,75 @@
 package com.kotenkov.basics_of_software_code_development.cycle;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+//  Для каждого натурального числа в промежутке от m до n вывести все делители,
+//  кроме единицы и самого числа. m и n вводятся с клавиатуры
+
+import java.util.Scanner;
 
 public class Task7 {
-    public static void main(String[] args) throws IOException {
+
+    private static int getM(Scanner scanner){
         int m = 0;
-        int n = 0;
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
-        while (true) {
-            System.out.println("Введите натуральное число: ");
-            String line = input.readLine();
-            try{
-                m = Integer.parseInt(line);
-                if(m > 0) {
-                    break;
-                } else {
-                    System.out.println("Вы ввели не натуральное число! Повторите ввод!");
-                }
-            } catch (NumberFormatException e){
-                System.out.println("Вы ввели не натуральное число! Повторите ввод!");
-                continue;
+        while (m <= 0) {
+            System.out.println("\nВведите натуральное число:");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("\nВведите натуральное число:");
+            }
+
+            m = scanner.nextInt();
+
+            if (m > 0) {
+                break;
             }
         }
 
+        return m;
+    }
 
-        while (true) {
-            System.out.println("Введите целое число больше m = " + m +": ");
-            String line = input.readLine();
-            try {
-                n = Integer.parseInt(line);
-                if (n > m) {
-                    break;
-                } else {
-                    System.out.println("Вы ввели число не большее, чем m = " + m + " Повторите ввод!");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Вы ввели не целое число! Повторите ввод!");
-                continue;
+    private static int getN(Scanner scanner, int m){
+        int n = m;
+
+        while (n <= m) {
+            System.out.println("\nВведите натуральное число, большее, чем m = " + m + ":");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("\nВведите натуральное число, большее, чем m = " + m + ":");
+            }
+
+            n = scanner.nextInt();
+
+            if (n > m) {
+                break;
             }
         }
 
-        System.out.println("Выводим все делители, кроме единицы и самого числа, для всех чисел в промежутке от m = " +
+        return n;
+    }
+
+    private static void doTask7(){
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        int m = getM(scanner);
+        int n = getN(scanner, m);
+
+        System.out.println("Выводим все делители, кроме единицы и самого числа," +
+                           " для всех чисел в промежутке от m = " +
                            m + " до n = " + n + ": ");
 
-        for (int i = m; i < n; i++) {
+        for (int i = m; i <= n; i++) {
             for (int j = 2; j < i; j++) {
                 if (i%j == 0){
                     System.out.println(j + " является делителем для числа " + i);
                 }
             }
         }
+    }
+
+    public static void main(String[] args){
+
+        doTask7();
+
     }
 }

@@ -1,5 +1,8 @@
 package com.kotenkov.algoritmization.decomposition.task_9;
 
+//  Даны числа X, Y, Z, Т — длины сторон четырехугольника. Написать метод(методы) вычисления его площади,
+//  если угол между сторонами длиной X и Y — прямой.
+
 public class Task9 {
 
     private static double calculateHalfPerimeter(double x, double y,
@@ -10,7 +13,8 @@ public class Task9 {
 
     private static boolean isExist(double x, double y,
                                    double z, double t){
-        if((z + t) > Math.sqrt(x*x + y*y) && (x != 0) && (y != 0) && (z != 0) && (t != 0)){
+        boolean condition = (z + t) > Math.sqrt(x*x + y*y) && (x > 0) && (y > 0) && (z > 0) && (t > 0);
+        if(condition){
             return true;
         } else {
             return false;
@@ -27,7 +31,7 @@ public class Task9 {
         }
     }
 
-    public static void doTask9(double x, double y,
+    private static void doTask9(double x, double y,
                                double z, double t){
         if(calculateTheArea(x, y, z, t) == 0){
             System.out.println("\nЧетырехугольник со сторонами " + x + ", " + y + ", " + z + ", " + t +
@@ -36,6 +40,12 @@ public class Task9 {
             System.out.println("\nПлощадь четырехугольника со сторонами " + x + ", " + y + ", " + z + ", " + t +
                     " равна " + calculateTheArea(x, y, z, t) + "\n");
         }
+    }
+
+    public static void main(String[] args) {
+
+        Task9.doTask9(4, 5, 8, 9);
+
     }
 
 }

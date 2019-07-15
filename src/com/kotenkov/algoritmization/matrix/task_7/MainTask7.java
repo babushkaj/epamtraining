@@ -10,6 +10,7 @@ public class MainTask7 {
 
         Task7 t7 = new Task7(5);
         t7.doTask7();
+        System.out.println("Матрица (нумерация строк и столбцов начинается с 1):");
         t7.printMatrix();
         t7.countPositiveElements();
 

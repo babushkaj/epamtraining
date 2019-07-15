@@ -5,19 +5,13 @@ package com.kotenkov.algoritmization.matrix.task_8;
 //  пользователь с клавиатуры.
 
 
-import java.io.IOException;
-
 public class MainTask8 {
 
     public static void main(String[] args) {
 
         Task8 t8 = new Task8(5);
         t8.createRandomMatrix();
-        try {
-            t8.enterColumnsNumbers();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        t8.enterColumnsNumbers();
         System.out.println("\nИсходная матрица: \n");
         t8.printMatrix();
         t8.doTask8();

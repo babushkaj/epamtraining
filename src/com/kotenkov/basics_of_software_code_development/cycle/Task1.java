@@ -1,36 +1,47 @@
 package com.kotenkov.basics_of_software_code_development.cycle;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+//  Напишите программу, где пользователь вводит любое целое положительное число.
+//  А программа суммирует все числа от 1 до введенного пользователем числа.
+
+import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args) throws IOException {
-        int value = 0;
-        int result = 0;
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        while (true) {
-            System.out.println("Введите целое положительное число: ");
-            String line = input.readLine();
-            try{
-                value = Integer.parseInt(line);
-                if (value > 0) {
-                    System.out.println("Вы ввели число " + value);
-                    break;
-                } else {
-                    System.out.println("Вы ввели отрицательно число! Повторите ввод!");
-                }
-            } catch (NumberFormatException e){
-                System.out.println("Вы ввели не целое число! Повторите ввод!");
-                continue;
+
+    private static int getUsersInt(){
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+        int number = 0;
+
+        while (number <= 0) {
+            System.out.println("\nВведите целое положительное число:");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("\nВведите целое положительное число:");
+            }
+
+            number = scanner.nextInt();
+
+            if (number > 0) {
+                break;
             }
         }
-        input.close();
 
-        for (int i = 1; i <= value; i++) {
+        return number;
+    }
+
+    private static int doTask1(int number){
+        int result = 0;
+
+        for (int i = 1; i <= number; i++) {
             result += i;
         }
 
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int value = getUsersInt();
+        int result = doTask1(value);
         System.out.println("Сумма чисел от 1 до " + value + " (включительно) равна " + result + "." );
     }
 }
