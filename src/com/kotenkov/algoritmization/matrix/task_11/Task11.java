@@ -46,7 +46,7 @@ public class Task11 {
             }
         }
 
-        System.out.println("\nНомера строк (отсчёт ведётся с 1), в которых число 5 встречается три и более раз: ");
+        System.out.println("\nНомера строк (отсчёт ведётся с 1), в которых число 5 встречается три и более раз:\n");
         for (int i = 0; i < matchMatrix.length; i++) {
             if(matchMatrix[i] == 1){
                 System.out.print((i + 1) + "\t");

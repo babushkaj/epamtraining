@@ -2,6 +2,7 @@ package com.kotenkov.basics_of_software_code_development.linear_program;
 
 //  Вычислить значение выражения по формуле (все переменные принимают действительные значения):
 //  ((sin x + cos y)/(cos x - sin x))*tg xy
+
 public class Task3 {
 
     private static double doTask3(double x, double y){

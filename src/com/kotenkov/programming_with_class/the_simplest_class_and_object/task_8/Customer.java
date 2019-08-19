@@ -103,4 +103,19 @@ public class Customer {
         return  id + " " + surname + " " + firstname + " " + patronymic + "; " +
                 address + "; cardNumber = " + cardNumber + "; accountNumber = " + accountNumber;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Customer customer = (Customer) o;
+
+        return id == customer.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }

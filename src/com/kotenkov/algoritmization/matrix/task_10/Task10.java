@@ -15,7 +15,7 @@ public class Task10 {
         matrix = new int [n][n];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix [i][j] = (int)(Math.random()*10);
+                matrix [i][j] = (int)(Math.random()*10) - 5;
             }
         }
     }
@@ -30,16 +30,15 @@ public class Task10 {
     }
 
     public void doTask10(){
-        int max = matrix[0][0];
-        for (int i = 1; i < matrix.length; i++) {
-            for (int j = 1; j < matrix[i].length; j++) {
-                if(i == j && matrix[i][j] > max){
-                    max = matrix[i][j];
+        System.out.print("\nПоложительные элементы главной диагонали:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if(i == j && matrix[i][j] > 0){
+                    System.out.print(matrix[i][j] + "\t");
                 }
             }
         }
 
-        System.out.println("Максимальный элемент главной диагонали: " + max);
     }
 
 }

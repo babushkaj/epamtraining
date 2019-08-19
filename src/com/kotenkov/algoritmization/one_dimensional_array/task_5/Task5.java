@@ -30,7 +30,8 @@ public class Task5 {
     }
 
     private void doTask5(){
-        System.out.println("Выводим числа, для которых ai > i (если таковые имеются)...");
+        System.out.println("Выводим числа, для которых ai > i (если таковые имеются). " +
+                           "Нумерацию элементов массива начинаю с \'1\'");
         for (int i = 0; i < array.length; i++) {
             if (array[i] > (i + 1)){
                 System.out.print(array[i] + "\t");

@@ -1,7 +1,7 @@
 package com.kotenkov.string_and_basic_of_text_processing.string_and_string_builder.task_7;
 
 //  Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. Например,
-// если было введено "abc cde  def", то должно быть выведено "abcdef".
+//  если было введено "abc cde  def", то должно быть выведено "abcdef".
 
 public class Task7 {
 

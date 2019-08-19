@@ -1,6 +1,7 @@
-package com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1;
+package com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.menu;
 
 import com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.part_of_text.Text;
+import com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.text_pricessing.TextActions;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class MainMenu {
     @SuppressWarnings("resource")
     Scanner scanner = new Scanner(System.in);
 
-    String menuText = "Выберите необходимое действие:\n" +
+    String menuText = "\nВыберите необходимое действие:\n" +
                       "1 - Сортировать абзацы по количеству предложений.\n" +
                       "2 - В каждом предложении отсортировать слова по длине.\n" +
                       "3 - Отсортировать слова в предложении по убыванию  количества\n" +

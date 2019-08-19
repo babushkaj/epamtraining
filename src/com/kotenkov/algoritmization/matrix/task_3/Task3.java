@@ -37,7 +37,7 @@ public class Task3 {
 
     public void doTask3(){
         if(k <= matrix.length){
-            System.out.println("Выводим " + k + "-ую строку:");
+            System.out.println("Выводим " + k + "-ую строку (нумерация с \'1\'):");
             for (int i = 0; i < matrix[k - 1].length; i++) {
                 System.out.print(matrix[k - 1][i] + "\t");
             }
@@ -46,7 +46,7 @@ public class Task3 {
         }
 
         if(p <= matrix[0].length){
-            System.out.println("\nВыводим " + p + "-й столбец:");
+            System.out.println("\nВыводим " + p + "-й столбец (нумерация с \'1\'):");
             for (int i = 0; i < matrix.length; i++) {
                 System.out.println(matrix[i][ p - 1]);
             }

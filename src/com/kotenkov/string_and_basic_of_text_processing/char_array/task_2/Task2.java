@@ -35,7 +35,7 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        String string = "He writes the word but anybody won't read this word.";
+        String string = "He writes the word but nobody will read this word.";
         char [] array = string.toCharArray();
         Task2.doTask2(array);
 

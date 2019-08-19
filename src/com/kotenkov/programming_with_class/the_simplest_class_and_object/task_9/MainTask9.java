@@ -39,6 +39,9 @@ public class MainTask9 {
                 2017, 384, 10, BookBinding.HARDCOVER);
 
         Book [] books = {book1, book2, book3, book4, book5};
+
+        int num = 5;
+        System.out.println("\nСоздаем Library на " + num + "книг...\n");
         Library lib = new Library(5, books);
 
         System.out.println("Книги автора " + author1);

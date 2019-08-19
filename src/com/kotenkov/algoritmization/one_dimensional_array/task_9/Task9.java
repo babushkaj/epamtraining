@@ -88,7 +88,8 @@ public class Task9 {
     }
 
     private void printMarkersArray(){
-        System.out.println("Количество повторений для каждого числа(\"0\" - число было ранее): ");
+        System.out.println("\nДополнительный массив для учёта \n" +
+                           "количества повторений для каждого числа(\"0\" - число было ранее): ");
         for (int i = 0; i < markersArray.length; i++) {
             System.out.print(markersArray [i] + "\t");
         }

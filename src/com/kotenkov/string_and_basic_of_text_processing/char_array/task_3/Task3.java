@@ -4,7 +4,7 @@ package com.kotenkov.string_and_basic_of_text_processing.char_array.task_3;
 
 public class Task3 {
 
-    private static int countDigits(char [] charsArray){
+    private static int calculateDigits(char [] charsArray){
         int counter = 0;
         for (int i = 0; i < charsArray.length; i++) {
             if(Character.isDigit(charsArray[i])){
@@ -15,7 +15,7 @@ public class Task3 {
     }
 
     private static void doTask3(char [] charsArray){
-        System.out.println("Количество цифр в строке: " + countDigits(charsArray));
+        System.out.println("Количество цифр в строке: " + calculateDigits(charsArray));
     }
 
     public static void main(String[] args) {

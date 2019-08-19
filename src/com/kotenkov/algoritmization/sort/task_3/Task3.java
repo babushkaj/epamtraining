@@ -26,19 +26,16 @@ public class Task3 {
         return result;
     }
 
-    private static int doSort(int [] array){
-        int swapCounter = 0;
+    private static void doSort(int [] array){
 
         for (int i = 0; i < array.length - 1; i++) {
             int max = findMax(array, i)[0];
             int indexMax = findMax(array, i)[1];
             if (array[i] != max){
                 swap(array, i, indexMax);
-                swapCounter++;
             }
         }
 
-        return swapCounter;
     }
 
     private static void printArray(int [] array){
@@ -51,7 +48,7 @@ public class Task3 {
     public static void doTask3(int [] array){
         System.out.println("Исходная последовательность:\n");
         printArray(array);
-        int swapCount = doSort(array);
+        doSort(array);
         System.out.println("Последовательность после сортировки:\n");
         printArray(array);
     }

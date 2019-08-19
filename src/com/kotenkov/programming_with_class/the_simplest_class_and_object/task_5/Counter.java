@@ -38,7 +38,7 @@ public class Counter {
         if(value<maxLimit){
             value++;
         }else{
-            System.out.println("Невозможно увеличить значение. Достигнут верхний предел.");
+            System.out.println("Невозможно увеличить значение. Достигнут верхний предел " + maxLimit + ".");
         }
     }
 
@@ -46,7 +46,7 @@ public class Counter {
         if(value>minLimit){
             value--;
         }else{
-            System.out.println("Невозможно уменьшить значение. Достигнут нижний предел.");
+            System.out.println("Невозможно уменьшить значение. Достигнут нижний предел " + minLimit + ".");
         }
     }
 

@@ -29,7 +29,7 @@ public class Task6 {
 
     public static void main(String[] args) {
 
-        String string = "I like riding!";
+        String string = "I like riding my bike!";
         Task6.doTask6(string);
 
     }

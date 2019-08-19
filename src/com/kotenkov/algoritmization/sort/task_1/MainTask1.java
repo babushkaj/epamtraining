@@ -11,6 +11,7 @@ public class MainTask1 {
         int [] arrayOne = {1, 2, 3, 4, 5};
         int [] arrayTwo = {11, 22, 33};
 
+        //нумерация элементов в отображаемых массивах ведется с '1'
         Task1.doTask1(arrayOne, arrayTwo, 3);
         Task1.doTask1(arrayOne, arrayTwo, 1);
         Task1.doTask1(arrayOne, arrayTwo, 4);

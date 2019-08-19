@@ -8,7 +8,7 @@ public class Task3 {
         int sum = 0;
 
         for (int i = 1; i <= n; i++) {
-            sum+=i*i;
+            sum += i*i;
         }
 
         return sum;

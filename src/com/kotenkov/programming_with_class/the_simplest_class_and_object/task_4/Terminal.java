@@ -52,6 +52,7 @@ public class Terminal {
             }
         }
 
+        sc.close();
         return usersInput;
     }
 
@@ -122,34 +123,5 @@ public class Terminal {
             swap(tr, k, k-1);
         }
     }
-
-    //    Сортировка поездов по номерам
-//    public void sortTrainsByNumbers(){
-//        Arrays.sort(trains, new Comparator<Train>() {
-//            @Override
-//            public int compare(Train o1, Train o2) {
-//                return o1.getNumber()-o2.getNumber();
-//            }
-//        });
-//    }
-
-//    Сортировка поездов по пункту назначения и времени
-//    public void sortTrainsByFinalDestAndDepTime(){
-//        Arrays.sort(trains, new Comparator<Train>() {
-//            @Override
-//            public int compare(Train o1, Train o2) {
-//                return o1.getFinalDestination().compareTo(o2.getFinalDestination());
-//            }
-//        }.thenComparing(new Comparator<Train>() {
-//            @Override
-//            public int compare(Train o1, Train o2) {
-//                //допустимо привдение к int, т.к. в году 31 536 000 секунд,
-//                //что меньше диапазона int, а расписание на 100 лет никто не составляет
-//                int res = (int)(o1.getDepartureTime().getTime().getTime() -
-//                        o2.getDepartureTime().getTime().getTime());
-//                return res;
-//            }
-//        }));
-//    }
 
 }

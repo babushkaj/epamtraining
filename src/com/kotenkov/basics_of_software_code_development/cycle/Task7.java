@@ -10,7 +10,7 @@ public class Task7 {
     private static int getM(Scanner scanner){
         int m = 0;
 
-        while (m <= 0) {
+        while (true) {
             System.out.println("\nВведите натуральное число:");
             while (!scanner.hasNextInt()) {
                 scanner.next();

@@ -15,7 +15,7 @@ public class Triangle {
     private Triangle() {
     }
 
-    public static Triangle byTwoSidesAndAngle(double sideAB, double sideCA, double angleA){
+    public static Triangle createByTwoSidesAndAngle(double sideAB, double sideCA, double angleA){
         if(angleA >= 180) {
             angleA = 60;
             sideCA = sideAB;
@@ -36,7 +36,7 @@ public class Triangle {
         return t;
     }
 
-    public static Triangle bySideAndTwoAngles(double sideAB, double angleA, double angleB){
+    public static Triangle createBySideAndTwoAngles(double sideAB, double angleA, double angleB){
         if(angleA + angleB >= 180){
             angleA = 60;
             angleB = 60;
@@ -57,7 +57,7 @@ public class Triangle {
         return t;
     }
 
-    public static Triangle byThreeSides(double sideAB, double sideBC, double sideCA){
+    public static Triangle createByThreeSides(double sideAB, double sideBC, double sideCA){
         if(!(sideAB + sideBC > sideCA && sideBC + sideCA > sideAB && sideAB + sideCA > sideBC)){
            sideBC = sideAB;
            sideCA = sideAB;

@@ -26,7 +26,7 @@ public class Task6 {
     }
 
     private void printArray(){
-        System.out.print("[ ");
+        System.out.print("[");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array [i] + "\t");
         }
@@ -34,7 +34,8 @@ public class Task6 {
     }
 
     private void showResult(){
-        System.out.println("Сумма чисел, порядковые номера которых являются простыми числами: " + sum);
+        System.out.println("\nСумма чисел, порядковые номера которых являются простыми числами" +
+                           " (нумерацию чисел в массиве начинаю с \'1\'): " + sum);
     }
 
     private void doTask6(){
@@ -53,7 +54,7 @@ public class Task6 {
 
     public static void main(String[] args) {
 
-        Task6 t6 = new Task6(5);
+        Task6 t6 = new Task6(7);
         t6.createRandomArray();
         System.out.println("Массив: ");
         t6.printArray();

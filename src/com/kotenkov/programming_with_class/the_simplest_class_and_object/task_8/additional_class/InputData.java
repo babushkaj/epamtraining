@@ -41,6 +41,7 @@ public class InputData {
 
         borders[0] = from.toString();
         borders[1] = to.toString();
+        sc.close();
         return borders;
 
     }

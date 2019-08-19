@@ -48,7 +48,7 @@ public class Task10 {
 
     public static void main(String[] args) {
 
-        Task10 t10 = new Task10(9);
+        Task10 t10 = new Task10(10);
         t10.createRandomArray();
         System.out.println("Исходный массив: ");
         t10.printArray();

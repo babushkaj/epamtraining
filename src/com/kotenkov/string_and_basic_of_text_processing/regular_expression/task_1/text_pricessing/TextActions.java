@@ -1,4 +1,4 @@
-package com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1;
+package com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.text_pricessing;
 
 import com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.part_of_text.Paragraph;
 import com.kotenkov.string_and_basic_of_text_processing.regular_expression.task_1.part_of_text.Sentence;

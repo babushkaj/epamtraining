@@ -57,7 +57,7 @@ public class Task4 {
         System.out.println("Исходный массив: ");
         t4.printArray();
         t4.doTask4();
-        System.out.println("Массив после перестановки максимального и минимального элементов: ");
+        System.out.println("\nМассив после перестановки максимального и минимального элементов: ");
         t4.printArray();
 
     }

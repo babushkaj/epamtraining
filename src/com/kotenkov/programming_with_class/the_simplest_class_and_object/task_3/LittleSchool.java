@@ -40,6 +40,7 @@ public class LittleSchool {
     private Student [] students = {ivanov, petrov, sidorov, semenov, nikolaev,
                            aleksandrov, borisov, vladimirova, germanova, leonidova};
 
+
     public void showExcellentStudents(){
         System.out.println("Наши отличники:");
         for (int i = 0; i < students.length; i++) {

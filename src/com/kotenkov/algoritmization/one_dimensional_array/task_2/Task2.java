@@ -50,7 +50,7 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        Task2 t2 = new Task2(10, 10000000);
+        Task2 t2 = new Task2(5, 10000000);
         t2.createRandomArray();
         System.out.println("Исходный массив: ");
         t2.printArray();

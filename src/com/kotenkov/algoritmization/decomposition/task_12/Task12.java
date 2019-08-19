@@ -52,7 +52,7 @@ public class Task12 {
 
     public static void main(String[] args) {
 
-        int [] array = Task12.doTask12(-7, 231);
+        int [] array = Task12.doTask12(7, 231);
         Task12.printArray(array);
 
     }

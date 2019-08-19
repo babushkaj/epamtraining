@@ -76,7 +76,8 @@ public class Airline {
 
     @Override
     public String toString() {
-        return finalDestination + " " + flightNumber + " " + planeType + " " +
-                departureTime + " " + Arrays.toString(days);
+        return "finalDestination = " + finalDestination + ", flightNumber = " + flightNumber +
+               ", planeType = " + planeType + ", departureTime = " + departureTime +
+               ", days = " + Arrays.toString(days);
     }
 }

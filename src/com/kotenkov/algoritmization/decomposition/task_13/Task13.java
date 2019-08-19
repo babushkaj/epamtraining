@@ -19,7 +19,7 @@ public class Task13 {
 
     private static void doTask13(int n){
         if(n>2){
-            for (int i = 3; i < n - 1; i++) {
+            for (int i = n; i < 2*n - 1; i++) {
                 if(isSimpleNumber(i) && isSimpleNumber(i + 2)){
                     System.out.println("\nЧисла " + i + " и " + (i+2) + " являются \"близнецами\".");
                 }

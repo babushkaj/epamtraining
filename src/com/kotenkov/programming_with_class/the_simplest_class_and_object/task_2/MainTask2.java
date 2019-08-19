@@ -15,7 +15,7 @@ public class MainTask2 {
                            ", variable2 = " + testOne.getVariable2());
 
         System.out.println("Значения переменых для testTwo. variable1 = " + testTwo.getVariable1() +
-                ", variable2 = " + testTwo.getVariable2());
+                           ", variable2 = " + testTwo.getVariable2());
 
         testOne.setVariable1(1000);
         testOne.setVariable2(2000);

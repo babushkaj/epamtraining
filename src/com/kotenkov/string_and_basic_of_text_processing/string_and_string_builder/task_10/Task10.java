@@ -10,8 +10,8 @@ public class Task10 {
 
         boolean sentenceIsBegun = false;
         for (int i = 0; i < text.length(); i++) {
-            int checkSymbol = text.charAt(i);
-            if(checkSymbol != 33 && checkSymbol != 46 && checkSymbol != 63){
+            int checkedSymbol = text.charAt(i);
+            if(checkedSymbol != 33 && checkedSymbol != 46 && checkedSymbol != 63){
                 if(sentenceIsBegun){
                     continue;
                 } else {

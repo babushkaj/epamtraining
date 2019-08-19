@@ -6,7 +6,7 @@ public class MainTask10 {
 
     public static void main(String[] args) {
 
-        Task10 t10 = new Task10(8);
+        Task10 t10 = new Task10(5);
         t10.createRandomMatrix();
         System.out.println("\nДанная матрица: \n");
         t10.printMatrix();

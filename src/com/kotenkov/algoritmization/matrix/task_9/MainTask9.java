@@ -9,7 +9,7 @@ public class MainTask9 {
 
         Task9 t9 = new Task9(4);
         t9.createRandomMatrix();
-        System.out.println("\nДанная матрица: ");
+        System.out.println("Данная матрица:\n");
         t9.printMatrix();
         t9.doTask9();
 

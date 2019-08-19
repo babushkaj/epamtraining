@@ -16,7 +16,7 @@ public class Task5 {
 
     public static void main(String[] args) {
 
-        int x = 4;
+        int x = 1;
 
         doTask5(x);
 

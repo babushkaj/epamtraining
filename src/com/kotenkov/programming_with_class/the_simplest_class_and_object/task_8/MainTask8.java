@@ -47,7 +47,9 @@ public class MainTask8 {
 
         Customer [] customers = {c1,c2,c3,c4,c5};
 
-        CustomerBase cb = new CustomerBase(4, customers);
+        int num = 4;
+        System.out.println("\nСоздаем CustomerBase на " + num + " места...");
+        CustomerBase cb = new CustomerBase(num, customers);
 
         System.out.println("\nПокупатели после инициализации CustomerBase:");
         cb.printCustomers();

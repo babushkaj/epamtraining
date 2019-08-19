@@ -11,7 +11,7 @@ public class Task5 {
         int finish = charsArray.length;
         boolean noSpaceAtTheBeginning = true;
         boolean noSpaceAtTheEnd = true;
-
+        //
         while(noSpaceAtTheBeginning || noSpaceAtTheEnd){
             if(Character.isSpaceChar(charsArray[start])){
                 start++;

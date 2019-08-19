@@ -4,131 +4,161 @@ package com.kotenkov.algoritmization.matrix.task_16;
 //  1, 2, 3,...,n*n так, что суммы по каждому столбцу, каждой строке и каждой из двух больших диагоналей
 //  равны между собой. Построить такой квадрат.
 
+//	Алгоритм проверяет все возможные перестановки. Для порядка матрицы '3' результат выдается моментально,
+//  а для порядка '4' первый магический квадрат будет найден через ~40-50 мин, а просчёт всех комбинаций
+//	займёт 5-7 суток (на моем ноутбуке)
+
 public class Task16 {
+	
+	public static void main(String[] args) {
 
-    private static boolean checkRowsAndColumnsSum(int [][] matrix, int theSumOfFirstRow){
-        boolean theSumIsTheSame = true;
+		Task16 t = new Task16();
 
+        t.doAllPermutations(3);
 
-        for (int i = 0; i < matrix.length; i++) {
-            int rowSum = 0;
-            int columnSum = 0;
-            for (int j = 0; j < matrix[i].length; j++) {
-                rowSum += matrix[i][j];
-                columnSum += matrix[j][i];
-            }
-            if(!(theSumOfFirstRow == rowSum) || !(theSumOfFirstRow == columnSum)){
-                theSumIsTheSame = false;
-                break;
-            }
-        }
-
-        return theSumIsTheSame;
     }
 
-    private static boolean checkDiagonals(int [][] matrix, int theSumOfFirstRow){
-        int mainDiagonalSum = 0;
-        int sideDiagonalSum = 0;
-
-        for (int i = 0; i < matrix.length; i++) {
-            mainDiagonalSum += matrix[i][i];
-            sideDiagonalSum += matrix[matrix.length - i - 1][matrix.length - i - 1];
+	private static void doAllPermutations(int n){
+        int size = (int)Math.pow(n,2);
+        int [] array = new int [size];
+        for (int i = 0; i < size; i++) {
+            array[i] = i+1;
         }
 
-        if(theSumOfFirstRow == mainDiagonalSum && theSumOfFirstRow == sideDiagonalSum){
-            return true;
-        } else {
+        int magicConst = (n * (n*n + 1))/2;
+        long counter = 1L;
+        int i = -1;
+
+        while(counter < getFactorial(size)){
+
+            for (int k = array.length-1; k > 0 ; k--) {
+                if(array[k] > array[k-1]){
+                    i = k - 1;
+                    break;
+                }
+            }
+
+            for (int k = array.length-1; k > 0 ; k--) {
+                if(array[k] > array[i]){
+                    swap(array, i, k);
+                    sortRightPartOfArray(array, i);
+                    counter++;
+
+                    if(checkArray(array, magicConst, n)){
+
+                        System.out.println("Это магический квадрат:\n");
+                        System.out.println(arrToMatrixString(array));
+                    }
+
+                    break;
+                }
+            }
+        }
+    }
+
+    private static boolean checkArray(int [] arr, int magicConst, int n){
+
+        if(!checkColumns(arr, n, magicConst)){
             return false;
         }
-    }
-
-    private static boolean checkTheMatrix(int [][] matrix){
-        int theSumOfFirstRow = 0;
-
-        for (int i = 0; i < matrix[0].length; i++) {
-            theSumOfFirstRow += matrix[0][i];
+        if(!checkRows(arr, n, magicConst)){
+            return false;
         }
-        System.out.println("Сумма первой строки: " + theSumOfFirstRow);
-        return checkRowsAndColumnsSum(matrix, theSumOfFirstRow) &&
-               checkDiagonals(matrix, theSumOfFirstRow);
+        if(!checkMainD(arr, n, magicConst)){
+            return false;
+        }
+        if(!checkSecondaryD(arr, n, magicConst)){
+            return false;
+        }
+        return true;
     }
 
-    private static int [][] fillMatrixFromNumber(int n, int number){
-        int [] [] matrix = new int [n][n];
-        int range = n * n;
+    private static boolean checkColumns(int [] arr, int n, int checkingSum){
+        for (int i = 1; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < arr.length; j = j + n) {
+                sum += arr[j];
+            }
+            if(checkingSum != sum){
+                return false;
+            }
+        }
+        return true;
+    }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if(number <= range){
-                    matrix[i][j] = number++;
-                } else {
-                    number = 1;
-                    matrix[i][j] = number++;
+    private static boolean checkRows(int [] arr, int n,  int checkingSum){
+        for (int i = n; i < arr.length; i = i + n) {
+            int sum = 0;
+            for (int j = i; j < i + n; j++) {
+                sum += arr[j];
+            }
+            if(checkingSum != sum){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean checkMainD(int[] arr, int n, int checkingSum) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i = i + n + 1) {
+            sum += arr[i];
+        }
+        if(checkingSum != sum){
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean checkSecondaryD(int[] arr, int n, int checkingSum) {
+        int sum = 0;
+        for (int i = n - 1; i < arr.length - 1; i = i + n - 1) {
+            sum += arr[i];
+        }
+        if(checkingSum != sum){
+            return false;
+        }
+        return true;
+    }
+
+    private static void sortRightPartOfArray(int[] array, int i) {
+        int newLap = 0;
+        for (int j = i + 1; j < array.length - 1; j++) {
+            for (int k =  i + 1; k < array.length - newLap - 1; k++) {
+                if(array[k] > array[k+1]){
+                    swap(array, k, k+1);
                 }
             }
+            newLap++;
         }
-
-        return matrix;
     }
 
-    private static void printMatrix(int [][] matrix){
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "\t");
+    private static void swap(int [] array, int i, int j){
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+
+    private static long getFactorial(int num){
+        long result = 1;
+
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+
+        return result;
+    }
+
+    private static String arrToMatrixString(int [] arr){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < Math.sqrt(arr.length); i++) {
+            for (int j = 0; j < Math.sqrt(arr.length); j++) {
+                sb.append(arr[i * (int)Math.sqrt(arr.length) + j]);
+                sb.append("\t");
             }
-            System.out.println();
+            sb.append("\n");
         }
-    }
-
-    private static void swapTwoElements(int [][] matrix, int [] thePrevious, int [] theNext){
-        int tmp = matrix[theNext[0]][theNext[1]];
-        matrix[theNext[0]][theNext[1]] = matrix[thePrevious[0]][thePrevious[1]];
-        matrix[thePrevious[0]][thePrevious[1]] = tmp;
-    }
-
-    private static void findMagicSquares(int n){
-        for (int i = 0; i <= n*n; i++) {
-            int [][] matrix = fillMatrixFromNumber(n,i+1);
-            int [] previous = {matrix.length - 1, matrix.length - 1};
-            int [] next = {0,0};
-
-            for (int k = matrix.length - 1; k >= 0; k--) {
-                for (int l = matrix[k].length - 1; l >= 0 ; l--) {
-                    if(!(k == matrix.length - 1 && l == matrix.length - 1)){
-                        next[0] = k;
-                        next[1] = l;
-                        swapTwoElements(matrix, previous, next);
-                        previous = next;
-                    }
-                    if(checkTheMatrix(matrix)){
-                        printMatrix(matrix);
-
-                    }
-
-                }
-            }
-        }
-    }
-
-    private static void doTask16(int n){
-        System.out.println("Магические квадраты " + n + " порядка:\n");
-        findMagicSquares(n);
-    }
-
-    public static void main(String[] args) {
-
-//        doTask16(3);
-
-        int [][] matrix = {{6,1,8},
-                           {7,5,3},
-                           {2,9,4}};
-//        int [][] matrix = {{3,4,5},
-//                           {6,7,8},
-//                           {9,1,2}};
-        System.out.println(checkTheMatrix(matrix));
-//        int [][] matrix = fillMatrixFromNumber(3, 8);
-//        printMatrix(matrix);
-
+        return sb.toString();
     }
 
 }

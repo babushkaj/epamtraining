@@ -36,7 +36,7 @@ public class Task8 {
             System.out.println("Проверьте значение k. Для корректной работы должны выполняться условия: " +
                     "k > 0, k <= " + (array.length - 3));
         } else {
-            System.out.println("Массив (нумерация элементов начинается с 0:");
+            System.out.println("Массив (нумерация элементов начинается с 0):");
             printArray(array);
             System.out.println("Сумма " + k + ", " + (k+1) + ", " + (k+2) + " элементов массива равна " +
                                 calculateSumOfThree(k, array));
@@ -46,6 +46,7 @@ public class Task8 {
 
     public static void main(String[] args) {
 
+        //параметр метода - позиция числа в массиве, с которой начнется подсчет суммы трех чисел
         doTask8(5);
 
     }

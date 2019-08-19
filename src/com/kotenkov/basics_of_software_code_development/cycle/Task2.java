@@ -42,37 +42,20 @@ public class Task2 {
         return b;
     }
 
-    private static int getH(Scanner scanner, int a, int b){
+    private static int getH(Scanner scanner){
         int h = 0;
 
-        if (a < b){
-            while (h <= 0) {
+        while (true) {
+            System.out.println("\nВведите целое положительное число:");
+            while (!scanner.hasNextInt()) {
+                scanner.next();
                 System.out.println("\nВведите целое положительное число:");
-                while (!scanner.hasNextInt()) {
-                    scanner.next();
-                    System.out.println("\nВведите целое положительное число:");
-                }
-
-                h = scanner.nextInt();
-
-                if (h > 0) {
-                    break;
-                }
             }
-        } else {
-            System.out.println("Введите целое отрицательное число: ");
-            while (h >= 0) {
-                System.out.println("\nВведите целое отрицательное число:");
-                while (!scanner.hasNextInt()) {
-                    scanner.next();
-                    System.out.println("\nВведите целое отрицательное число:");
-                }
 
-                h = scanner.nextInt();
+            h = scanner.nextInt();
 
-                if (h < 0) {
-                    break;
-                }
+            if (h > 0) {
+                break;
             }
         }
 
@@ -85,7 +68,7 @@ public class Task2 {
 
         int a = getA(scanner);
         int b = getB(scanner,a);
-        int h = getH(scanner,a,b);
+        int h = getH(scanner);
 
         System.out.println("Вычисляем значение функции для a = " + a + ", b = " + b + ", h = " + h + ":");
         System.out.println("x\t y");

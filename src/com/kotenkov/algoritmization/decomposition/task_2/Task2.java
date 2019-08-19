@@ -17,7 +17,7 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        int nod = Task2.findNOD(15, 30, 45, 60);
+        int nod = Task2.findNOD(15, 30, 60, 45);
         System.out.println("Наибольший общий делитель: " + nod);
 
     }

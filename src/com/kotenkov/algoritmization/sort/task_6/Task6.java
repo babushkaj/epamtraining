@@ -35,7 +35,6 @@ public class Task6 {
                 for (int j = i; j < array.length - step; j+=step) {
                     if(array[j] > array[j+step]){
                         shift(array,j+step, step);
-//                        swap(array, j, j+step);
                     }
                 }
             }

@@ -45,7 +45,7 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        String [] names = {"oneTwo", "theSecondArgument", "veryLongAndStupidName"};
+        String [] names = {"oneTwo", "theSecondArgument", "veryLongArgumentName"};
         Task1.doTask1(names);
 
     }

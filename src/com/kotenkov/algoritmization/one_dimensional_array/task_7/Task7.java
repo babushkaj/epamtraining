@@ -10,7 +10,7 @@ public class Task7 {
 
     public Task7(int n) {
         if(n <= 0){
-            this.n = 5;
+            this.n = 6;
         } else {
             this.n = n;
         }
@@ -19,7 +19,7 @@ public class Task7 {
     private void createRandomArray(){
         array = new double [n];
         for (int i = 0; i < array.length; i++) {
-            array [i] = Math.random()*10;
+            array [i] = Math.random()*10 - 5;
         }
     }
 
@@ -32,29 +32,23 @@ public class Task7 {
     }
 
     private void showResult(){
-        System.out.println("max(a1 + a2n, a2 + a2n-1 , ... , an + an+1): " + max);
+        System.out.println("\nmax(a1 + a2n, a2 + a2n-1 , ... , an + an+1): " + max);
     }
 
     private void doTask7(){
-        if(array.length == 1){
 
-            max = array[0];
-
-        }else{
-
-            max = array[0] + array[array.length - 1];
-            for (int i = 1; i < array.length/2; i++) {
-                if(array[i] + array[array.length - i - 1] > max){
-                    max = array[i] + array[array.length - i - 1];
-                }
+        max = array[0] + array[array.length - 1];
+        for (int i = 1; i < array.length/2; i++) {
+            if(array[i] + array[array.length - i - 1] > max){
+                max = array[i] + array[array.length - i - 1];
             }
-
         }
+
     }
 
     public static void main(String[] args) {
 
-        Task7 t7 = new Task7(1);
+        Task7 t7 = new Task7(8);
         t7.createRandomArray();
         System.out.println("Массив: ");
         t7.printArray();

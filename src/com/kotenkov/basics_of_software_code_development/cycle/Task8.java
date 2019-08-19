@@ -5,7 +5,7 @@ package com.kotenkov.basics_of_software_code_development.cycle;
 public class Task8 {
 
     private static void doTask8(int number1, int number2){
-        //the count of digits in each number
+        //the amount of digits in each number
         int digitCount1 = (int)Math.log10(number1)+1;
         int digitCount2 = (int)Math.log10(number2)+1;
         int [] digitsMarkers = new int[10];

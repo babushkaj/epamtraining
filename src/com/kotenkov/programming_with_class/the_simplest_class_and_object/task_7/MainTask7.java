@@ -7,12 +7,12 @@ public class MainTask7 {
 
     public static void main(String[] args) {
 
-//        Triangle triangle1 = Triangle.byTwoSidesAndAngle(10, 7, 60);
-//        Triangle triangle1 = Triangle.bySideAndTwoAngles(10, 45, 30);
-        Triangle triangle1 = Triangle.byThreeSides(10, 7, 5);
+//        Triangle triangle1 = Triangle.createByTwoSidesAndAngle(10, 7, 60);
+//        Triangle triangle1 = Triangle.createBySideAndTwoAngles(10, 45, 30);
+        Triangle triangle1 = Triangle.createByThreeSides(10, 7, 5);
         System.out.println(triangle1);
-        System.out.println(triangle1.calculatePerimeter());
-        System.out.println(triangle1.calculateArea());
+        System.out.println("Perimeter: " + triangle1.calculatePerimeter());
+        System.out.println("Area: " + triangle1.calculateArea());
         triangle1.findTheMedianIntersectionPoint();
 
     }

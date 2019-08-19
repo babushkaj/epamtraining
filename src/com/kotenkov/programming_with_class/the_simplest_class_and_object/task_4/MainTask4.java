@@ -11,16 +11,18 @@ public class MainTask4 {
     public static void main(String[] args) {
 
         Terminal t = new Terminal();
+
+        System.out.println("=======================================================" +
+                "\nСортировка по пункту назначения и времени отправления:");
+        t.sortTrainsByFinalDestAndDepTime();
         t.showAllTrains();
         System.out.println("=======================================================" +
                            "\nСортировка по номерам:");
         t.sortTrainsByNumbers();
         t.showAllTrains();
-        System.out.println("=======================================================" +
-                           "\nСортировка по пункту назначения и времени отправления:");
-        t.sortTrainsByFinalDestAndDepTime();
-        t.showAllTrains();
+
         System.out.println("=======================================================");
+        System.out.println("\nПолучить информаци о поезде...");
         t.getInformationAboutTrain();
 
     }

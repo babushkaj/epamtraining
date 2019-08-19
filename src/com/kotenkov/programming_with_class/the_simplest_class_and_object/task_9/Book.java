@@ -113,8 +113,9 @@ public class Book {
 
     @Override
     public String toString() {
-        return  id + " " + author.toString() + " \"" + title + "\", " + publishingHouse +
-                ", " + yearOfPublishing + ", " + numberOfPages + "с., " + price +
-                "$, " + bookBinding.getValue();
+        return  "id = " + id + ", author = [" + author.toString() + "], title = " + title + ", " +
+                "publishingHouse = " + publishingHouse + ", yearOfPublishing = " + yearOfPublishing + ", " +
+                "numberOfPages = " + numberOfPages + ", price = " + price + ", bookBinding = " +
+                bookBinding.getValue();
     }
 }

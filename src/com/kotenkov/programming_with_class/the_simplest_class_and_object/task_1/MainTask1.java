@@ -15,11 +15,11 @@ public class MainTask1 {
 
         test.printVariables();
 
-        System.out.println("Cумма значений двух переменных равна: " +
+        System.out.println("Сумма значений двух переменных равна: " +
                             test.calculateSumOfTwoVariables());
 
         System.out.println("Наибольшее значение из этих двух переменных: " +
-                            test.theBiggestFromTwoVariables());
+                            test.getTheBiggestFromTwoVariables());
 
     }
 

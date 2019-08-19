@@ -38,7 +38,7 @@ public class Task8 {
             }
         }
 
-        System.out.println("Новая последовательность: ");
+        System.out.println("\nНовая последовательность: ");
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] != min){

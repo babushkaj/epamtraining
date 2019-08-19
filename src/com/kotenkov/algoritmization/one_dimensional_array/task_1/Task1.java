@@ -17,7 +17,6 @@ public class Task1 {
         } else {
             this.n = n;
         }
-
         this.k = k;
     }
 
@@ -48,7 +47,7 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        Task1 t1 = new Task1(10, 10);
+        Task1 t1 = new Task1(5, 2);
         t1.createRandomArray();
         t1.printArray();
         t1.doTask1();
