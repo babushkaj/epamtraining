@@ -15,8 +15,6 @@ public class Test2 {
     }
 
     public Test2() {
-        this.variable1 = 3;
-        this.variable2 = 4;
     }
 
     public int getVariable1() {
